@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #fdfbf7;
+    --surface: #ffffff;
+    --subtle: #f5f1ec;
+    --fg: #232120;
+    --muted: #6b6560;
+    --border: #e9e3dc;
+    --primary: #e5654a;
+    --primary-fg: #ffffff;
+    --primary-soft: #fbe8e2;
+    --success: #12a150;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: #17100e;
+    --surface: #1f1a18;
+    --subtle: #272120;
+    --fg: #f3efea;
+    --muted: #a09790;
+    --border: #322b28;
+    --primary: #f07a60;
+    --primary-fg: #1a1210;
+    --primary-soft: #2e201c;
+    --success: #35c46f;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--primary-soft);
+    color: var(--fg);
+  }
+}
+
+@layer components {
+  .label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* One-line clamp for taglines in list rows. */
+  .clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

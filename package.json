@@ -1,0 +1,66 @@
+{
+  "name": "pay-to-rank",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "e2e:install": "playwright install chromium",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "seed": "tsx scripts/seed.ts",
+    "watcher": "tsx workers/payment-watcher.ts",
+    "wallet:generate": "tsx scripts/generate-wallet.ts",
+    "sweep": "tsx scripts/sweep.ts",
+    "deploy:mocks": "tsx scripts/deploy-mocks.ts",
+    "send:test": "tsx scripts/send-test-payment.ts"
+  },
+  "dependencies": {
+    "@noble/curves": "^1.7.0",
+    "@noble/hashes": "^1.6.1",
+    "@scure/bip32": "^1.5.0",
+    "@scure/bip39": "^1.4.0",
+    "drizzle-orm": "^0.38.3",
+    "next": "^15.5.0",
+    "next-auth": "5.0.0-beta.25",
+    "postgres": "^3.4.5",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "viem": "^2.21.55",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.7",
+    "drizzle-kit": "^0.30.1",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.5.0",
+    "postcss": "^8.4.49",
+    "solc": "^0.8.28",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}
